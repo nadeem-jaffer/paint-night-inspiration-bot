@@ -1,8 +1,38 @@
-# React + Vite
+# Paint Night Inspiration Bot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+by Alec Malenfant
+and Nadeem Mahommed
 
-Currently, two official plugins are available:
+# Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the paint-night-inspiration-bot.
+
+# Quick Start
+
+## Dependencies
+
+Install the needed dependencies by running these commands in the terminal :
+
+```
+  npm install
+  npm install @google/generative-ai
+  npm install @azure/cognitiveservices-computervision
+  npm install async
+```
+
+# API Key Environment Variables
+
+The API keys are stored as environment variables in a ".env.local" file in the root directory.
+If no such file exist, create that file and create value-key pairs with the following values :
+
+```
+VITE_GEMINI_API_KEY="YOUR-KEY"
+VITE_AZURE_VISION_KEY="YOUR-KEY"
+VITE_AZURE_VISION_ENDPOINT="YOUR-ENDPOINT"
+```
+
+## Start Development Server
+
+```
+ npm run dev
+```
