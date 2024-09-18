@@ -4,9 +4,18 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import GeminiTestButton from "../components/gemini-test";
 import AzureTestButton from "../components/azure-test";
+import GetImgTestButton from "../components/test-getimg";
+import ImageCarousel from "../components/image-carousel";
 
 function App() {
   const [count, setCount] = useState(0);
+  const imageUrls = [
+    "basquiatMoose.png",
+    "frog2.png",
+    "Glitch.png",
+    "guillotine.png",
+    "haringMoose.png",
+  ];
 
   return (
     <>
@@ -22,13 +31,11 @@ function App() {
       <div className="card">
         <GeminiTestButton />
         <AzureTestButton />
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <GetImgTestButton prompt="A cat in a hat" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="card">
+        <ImageCarousel imageUrls={imageUrls} />
+      </div>
     </>
   );
 }

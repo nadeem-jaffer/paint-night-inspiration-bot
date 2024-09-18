@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.cardImg {
+  width: 256px;
+  height: 256px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
