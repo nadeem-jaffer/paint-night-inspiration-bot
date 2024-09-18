@@ -30,7 +30,13 @@ Install the needed dependencies by running these commands in the terminal :
   npm install @google/generative-ai
   npm install @azure/cognitiveservices-computervision
   npm install async
+  npm install react-slick --save
+  npm install slick-carousel --save
+  npm install @mui/joy @emotion/react @emotion/style
 ```
+
+- react-slick and slick-carousel allow the program to use a slick image carousel to display generated images
+- mui/joy is a css and component library
 
 ## API Key Environment Variables
 
