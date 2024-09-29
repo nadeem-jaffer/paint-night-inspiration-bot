@@ -1,6 +1,7 @@
 //this component will return a button that tests the Gemini API when clicked. The results will be printed to console.
 import React from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { Button } from "@mui/material";
 
 //import key from environment variable
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -19,7 +20,11 @@ const GeminiTestButton = () => {
     console.log(result.response.text());
   };
 
-  return <button onClick={testGeminiAPI}>Test Gemini API</button>;
+  return (
+    <Button variant="contained" onClick={testGeminiAPI}>
+      Test Gemini API
+    </Button>
+  );
 };
 
 export default GeminiTestButton;

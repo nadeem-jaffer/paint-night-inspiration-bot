@@ -2,6 +2,7 @@ import React from "react";
 import { ComputerVisionClient } from "@azure/cognitiveservices-computervision";
 import { ApiKeyCredentials } from "@azure/ms-rest-js";
 import async from "async";
+import { Button } from "@mui/material";
 
 /**
  * AUTHENTICATE
@@ -54,7 +55,11 @@ const AzureTestButton = () => {
     );
   };
 
-  return <button onClick={testAzureAPI}>Test Azure API</button>;
+  return (
+    <Button variant="contained" onClick={testAzureAPI}>
+      Test Azure API
+    </Button>
+  );
 };
 
 export default AzureTestButton;

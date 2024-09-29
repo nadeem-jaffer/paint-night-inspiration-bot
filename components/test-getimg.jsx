@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 
 export default function GetImgTestButton({ promptText }) {
@@ -40,5 +41,10 @@ export default function GetImgTestButton({ promptText }) {
     }
   }
 
-  return <button onClick={fetchImageFromGetImgAI}>Test Getimg API</button>;
+  //return <button onClick={fetchImageFromGetImgAI}>Test Getimg API</button>;
+  return (
+    <Button variant="contained" onClick={fetchImageFromGetImgAI}>
+      Test Getimg API
+    </Button>
+  );
 }
