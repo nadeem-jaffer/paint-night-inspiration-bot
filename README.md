@@ -11,13 +11,30 @@ After hitting the “generate” button, the program will return a description o
 
 # Current State of Development
 
-Both Google's Gemini API and Microsoft's image description API have been implemented. When the development server is run, the user sees a mostly default react + vite start screen. However, there are two buttons in the middle of the screen that test the previously mentioned APIs.
+I have been slowly but surely chugging away at UI development. The page and it's components are responsive to change in screen size.
 
-Microsoft's image description API describes an image of a child and an adult skating at a skate park. When the test button is pressed, the API outputs the AI description and the confidence score into the console.
+<br/>These are the buttons that **do** work :
 
-Google's Gemini API is currently prompted to "Write a story about a magic backpack." The output will be printed to the console
+- All 3 buttons to test the API
+- Upload image button
+- Add keyword button
 
-The third and final API to implement is the getimg.ai image generation API
+These are the buttons that **do not** work :
+
+- Generate image
+- Login
+
+## Next Steps
+
+The next steps are to:
+
+- Integrate Nadeem's login code with this code
+- Add image description + confidence to the bottom of the reference image modal
+- Make 'Generate Image' button work
+- Remove Test API buttons
+- Maybe replace the image carousel with an image list. I think that could look better with lots of images on a wider screen
+- Store Images for logged in users
+- Deploy
 
 # Quick Start
 
@@ -32,11 +49,13 @@ Install the needed dependencies by running these commands in the terminal :
   npm install async
   npm install react-slick --save
   npm install slick-carousel --save
-  npm install @mui/joy @emotion/react @emotion/style
+  npm install @mui/material @emotion/react @emotion/styled
+  npm install @mui/icons-material
+  npm install @fontsource/roboto
 ```
 
 - react-slick and slick-carousel allow the program to use a slick image carousel to display generated images
-- mui/joy is a css and component library
+- mui is a component library called 'Material UI'
 
 ## API Key Environment Variables
 
