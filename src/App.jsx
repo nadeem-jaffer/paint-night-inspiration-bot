@@ -1,11 +1,33 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import GeminiTestButton from "../components/gemini-test";
 import AzureTestButton from "../components/azure-test";
 import GetImgTestButton from "../components/test-getimg";
 import ImageCarousel from "../components/image-carousel";
+import ChipsArray from "../components/chip-array";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+  Toolbar,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { pink, purple } from "@mui/material/colors";
+import SourceImagePaper from "../components/source-image-paper";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[900],
+    },
+    secondary: {
+      main: pink[300],
+    },
+  },
+});
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,23 +41,73 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <GeminiTestButton />
-        <AzureTestButton />
-        <GetImgTestButton prompt="A cat in a hat" />
-      </div>
-      <div className="card">
-        <ImageCarousel imageUrls={imageUrls} />
-      </div>
+      <ThemeProvider theme={theme}>
+        {/*Wrapper*/}
+        <Container
+          sx={{ bgcolor: theme.palette.secondary.main, height: "100%" }}
+          disableGutters
+        >
+          {/*Title Bar*/}
+          <Box sx={{ width: "100%" }}>
+            <AppBar position="static" sx={{ width: "100%" }}>
+              <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                  Paint Night Inspiration Bot
+                </Typography>
+                <Button variant="outlined" color="inherit">
+                  Login
+                </Button>
+              </Toolbar>
+            </AppBar>
+          </Box>
+
+          {/*App Body*/}
+          <Stack
+            direction={{ md: "column", lg: "row" }}
+            alignItems="center"
+            sx={{ m: 2 }}
+          >
+            {" "}
+            {/*Left / Top part of stack*/}
+            <Box
+              sx={{
+                width: { xs: "100%", sm: "70%", md: "80%", lg: "50%" },
+                mx: 2,
+              }}
+            >
+              <GeminiTestButton />
+              <AzureTestButton />
+              <GetImgTestButton prompt="A cat in a hat" />
+
+              {/*Source Image*/}
+              <SourceImagePaper />
+              {/*Keywords*/}
+              <ChipsArray />
+            </Box>
+            {/*Right / Bottom part of stack */}
+            <Box
+              sx={{
+                width: { xs: "100%", sm: "70%", md: "80%", lg: "50%" },
+                mx: 2,
+              }}
+            >
+              {/*Generate Image Button*/}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  width: "100%",
+                }}
+              >
+                <Button sx={{ m: 2 }} variant="contained">
+                  Generate Image
+                </Button>
+              </Box>
+              <ImageCarousel imageUrls={imageUrls} />
+            </Box>
+          </Stack>
+        </Container>
+      </ThemeProvider>
     </>
   );
 }

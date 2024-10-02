@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import CarouselCard from "./carousel-card";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Box } from "@mui/material";
 
 export default function ImageCarousel({ imageUrls }) {
   const settings = {
@@ -15,16 +16,48 @@ export default function ImageCarousel({ imageUrls }) {
     centerMode: true,
     infinite: true,
     centerPadding: "90px",
-    slidesToShow: 3,
     speed: 500,
     draggable: true,
     focusOnSelect: true,
+    slidesToShow: 2, // Default value
+    responsive: [
+      {
+        breakpoint: 1536, // xl
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1200, // lg
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 900, // md
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600, // sm
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 0, // xs
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const sliderItems = imageUrls.map((imageUrl, index) => (
-    <div key={index}>
+    <Box key={index}>
       <CarouselCard imgURL={imageUrl} />
-    </div>
+    </Box>
   ));
 
   return (
