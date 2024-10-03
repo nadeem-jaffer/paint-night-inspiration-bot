@@ -44,7 +44,7 @@ function App() {
       <ThemeProvider theme={theme}>
         {/*Wrapper*/}
         <Container
-          sx={{ bgcolor: theme.palette.secondary.main, height: "100%" }}
+          sx={{ bgcolor: theme.palette.secondary.main, height: "100vh" }}
           disableGutters
         >
           {/*Title Bar*/}
