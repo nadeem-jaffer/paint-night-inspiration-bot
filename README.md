@@ -28,7 +28,7 @@ These are the buttons that **do not** work :
 
 The next steps are to:
 
-- Integrate Nadeem's login code with this code
+- Integrate Nadeem's clerk code into this project
 - Add image description + confidence to the bottom of the reference image modal
 - Make 'Generate Image' button work
 - Remove Test API buttons
