@@ -5,6 +5,7 @@ import AzureTestButton from "../components/azure-test";
 import GetImgTestButton from "../components/test-getimg";
 import ImageCarousel from "../components/image-carousel";
 import ChipsArray from "../components/chip-array";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import {
   AppBar,
   Box,
@@ -54,9 +55,7 @@ function App() {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                   Paint Night Inspiration Bot
                 </Typography>
-                <Button variant="outlined" color="inherit">
-                  Login
-                </Button>
+                <SignedIn>
               </Toolbar>
             </AppBar>
           </Box>
